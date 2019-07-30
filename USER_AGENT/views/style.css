@@ -1,0 +1,50 @@
+
+table {
+    border-collapse: collapse;
+}
+
+table, tr, td {
+    border: 1px solid black;
+    border-collapse : collapse;
+    border-spacing : 2px;
+
+}
+tr {
+    text-align: center;
+
+}
+body.smartphone{
+    font-size: 30px;
+}
+
+div.centre {
+    position:absolute;
+    left: 50%;
+    top: 50%;
+    width: 200px;
+    height: 200px;
+    margin-left: -100px; /* Cette valeur doit être la moitié négative de la valeur du width */
+    margin-top: -100px; /* Cette valeur doit être la moitié négative de la valeur du height */
+}
+
+button.copyB{
+    position:absolute;
+    left: 50%;
+    width: 50px;
+
+    margin-left: -25px; /* Cette valeur doit être la moitié négative de la valeur du width */
+}
+.copiedtext {
+    position: absolute;
+    left: 0; top: 0; right: 0;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-1em);
+    color: #000;
+    transition: all .500s;
+}
+.copied .copiedtext {
+    opacity: 1;
+    transform: translateY(-2em);
+}
+

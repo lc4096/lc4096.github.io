@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="views/w3s.css">
+    <link rel="stylesheet" href="views/style.css">
+    <meta charset="UTF-8">
+    <title>Admin panel</title>
+</head>
+<body>
+
+<div class="w3-bar w3-black">
+    <button class="w3-bar-item w3-button" onclick="openWindow('Tools')">Tools</button>
+    <button class="w3-bar-item w3-button" onclick="openWindow('DB')">DB</button>
+
+</div>
+
+<div id="Tools" class="w3-container city">
+    <br>
+    <button onclick="clearDB(this)">Clear DB</button><br><br>
+    <form action="changeAdminSQLite.php" method="post" id="source_form">
+        Change admin pass:<br>
+        <input type="text" name="pw" id="pw" value="LERSSE">
+        <br>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+</div>
+
+<div id="DB" class="w3-container city" style="display:none">
+    <?php echo ArrayToTab($sqlite->getAllUA());?>
+</div>
+
+
+
+<script>
+    function openWindow(cityName) {
+        var i;
+        var x = document.getElementsByClassName("city");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+        }
+        document.getElementById(cityName).style.display = "block";
+    }
+</script>
+
+</body>
+</html>
